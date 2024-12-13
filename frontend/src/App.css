@@ -274,3 +274,21 @@ div {
   max-width: 250px;
   margin: 10px 0;
 }
+
+.favorite-btn {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.favorite-btn.favorited {
+  background-color: #4CAF50; /* Green when favorited */
+}
+
+.favorite-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}

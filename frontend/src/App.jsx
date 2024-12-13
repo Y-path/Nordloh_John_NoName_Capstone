@@ -129,7 +129,9 @@ export default function App() {
 // }
 <Router> 
       <div className={`App ${selectedGenre}`}>
-      {showSidebar && <Sidebar artist={selectedArtist} closeSidebar={closeSidebar} />}
+      {showSidebar && <Sidebar artist={selectedArtist}  
+      // isFavorite={isFavorite}handleFavorite={handleFavorite} 
+          closeSidebar={closeSidebar} />}
         <h1 className="title">Genreator</h1>
         <Form onSearch={(genre) => {
           setSelectedGenre(genre);

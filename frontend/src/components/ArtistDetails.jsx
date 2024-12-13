@@ -75,10 +75,13 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 function ArtistDetails({ setArtist }) {
-  const { id } = useParams(); 
+  // const { id } = useParams(); 
   const [artistDetails, setArtistDetails] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const { artistId } = useParams();
+  const [isFavorite, setIsFavorite] = useState(false);
+  // const artist = artistDetails;
 
   useEffect(() => {
     const fetchArtistDetails = async () => {
@@ -115,7 +118,43 @@ function ArtistDetails({ setArtist }) {
     };
 
     fetchArtistDetails();
-  }, [id, setArtist]);
+  }, [artistId, setArtist]);
+
+
+
+  const handleFavorite = async () => {
+    try {
+      const response = await fetch("http://localhost:5000/favorites", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          artistId: artistDetails.id, 
+          name: artistDetails.name, 
+          genre: artistDetails.genres[0],   
+          imageUrl: artistDetails.images[0]?.url  
+          
+
+        }),
+      });
+
+      if (!response.ok) {
+        const data = await response.json();
+        throw new Error("Failed to favorite the artist");
+      }
+
+      setIsFavorite(true);
+      alert("Artist has been added to favorites!");
+    } catch (err) {
+      console.error("Error: ", err);
+    alert(err.message || 'An error occurred');
+      // setError(err.message);
+    }
+  };
+
+
+  
 
   if (loading) return <p>Loading artist details...</p>;
   if (error) return <p>{error}</p>;
@@ -129,6 +168,16 @@ function ArtistDetails({ setArtist }) {
         <p>{artistDetails.genres.join(", ")}</p>
         <p>{artistDetails.popularity} Popularity</p>
         <a href={artistDetails.external_urls.spotify} target="_blank" rel="noopener noreferrer">Visit on Spotify</a>
+
+        <button
+          onClick={handleFavorite}
+          disabled={isFavorite}
+          className={`favorite-btn ${isFavorite ? "favorited" : ""}`}
+        >
+          {isFavorite ? "Favorited" : "Add to Favorites"}
+        </button>  
+
+
       </div>
     );
   }
