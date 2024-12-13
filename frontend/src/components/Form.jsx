@@ -40,7 +40,7 @@ export default function Form({ onSearch, genres }) {
   return (
     <form onSubmit={handleSubmit}>
       <label htmlFor="genre">Choose a genre:</label>&nbsp;&nbsp;
-      <select
+      <select className="text-white"
         id="genre"
         value={selectedGenre}
         onChange={(e) => setSelectedGenre(e.target.value)}

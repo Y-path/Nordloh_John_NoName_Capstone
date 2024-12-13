@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 
 // function Sidebar({ artist, closeSidebar, isFavorite, handleFavorite }) {
 //   if (!artist) return null; 
-function Sidebar({ artist, closeSidebar }) {
+const Sidebar = React.forwardRef(({ artist, closeSidebar }) => {
   const [isFavorite, setIsFavorite] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -27,7 +27,7 @@ function Sidebar({ artist, closeSidebar }) {
           artistId: artist.id, 
           name: artist.name, 
           imageUrl: artist.images[0]?.url, 
-          genre: artist.genres, 
+          genres: artist.genres, 
         }),
       });
 
@@ -51,13 +51,14 @@ function Sidebar({ artist, closeSidebar }) {
   return (
     <div className="sidebar">
       <button className="close-btn" onClick={closeSidebar}>Close</button>
-      <h2>{artist.name}</h2>
+      <h2 style={{marginTop: "30px"}}>{artist.name}</h2>
       <img src={artist.images[0]?.url} alt={artist.name} className="artist-image" />
       <p><strong>Followers:</strong> {artist.followers?.total}</p>
       <p><strong>Genres:</strong> {artist.genres?.join(", ")}</p>
       <p><strong>Popularity:</strong> {artist.popularity}</p>
-      <a href={artist.external_urls?.spotify} target="_blank" rel="noopener noreferrer">Visit on Spotify</a>
-
+      &nbsp;&nbsp;
+      <a href={artist.external_urls?.spotify} target="_blank" rel="noopener noreferrer">Visit on Spotify</a>&nbsp;&nbsp;
+      <div></div>
       <button
         onClick={handleFavorite}
         disabled={isFavorite || loading}
@@ -65,9 +66,11 @@ function Sidebar({ artist, closeSidebar }) {
       >
         {loading ? "Adding..." : isFavorite ? "Favorited" : "Add to Favorites"}
       </button> 
-
+      <div></div>
+      {error && <p className="error">{error}</p>}
+      
     </div>
   );
-}
+});
 
 export default Sidebar;

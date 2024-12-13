@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -215,12 +219,17 @@ div {
 .artist-item {
   width: 200px;
   text-align: center;
+  
 }
 
 .artist-image {
   width: 200px;
   height: 200px;
   border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  
+ 
 }
 
 .artists {
@@ -231,6 +240,7 @@ div {
   width: 100%;
   max-height: 50px;
   line-height: 50px;
+  
 }
 
 .sidebar {
@@ -244,17 +254,16 @@ div {
   background-color: rgba(0, 0, 0, 0.8);
   color: white;
   padding: 32px;
-  z-index: 100;
+  z-index: 1000;
   transition: transform 0.3s ease-in-out;
+  /* transition: right 0.3s ease; */
   border-radius: 12px;
   overflow-y: auto;
-  cursor: grab;
+  
+  
 
 }
 
-.sidebar.dragging {
-  cursor: grabbing; 
-}
 
 .sidebar button.close-btn {
   background-color: #535bf2;
@@ -266,13 +275,14 @@ div {
   position: absolute;
   top: 20px;
   right: 20px;
+  
 }
 
 .sidebar img.artist-image {
   width: 100%;
   height: auto;
   max-width: 250px;
-  margin: 10px 0;
+  margin: 10px 34px;
 }
 
 .favorite-btn {
@@ -282,6 +292,7 @@ div {
   padding: 10px;
   cursor: pointer;
   font-size: 16px;
+  margin: -10px;
 }
 
 .favorite-btn.favorited {
@@ -291,4 +302,9 @@ div {
 .favorite-btn:disabled {
   background-color: #ccc;
   cursor: not-allowed;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
 }

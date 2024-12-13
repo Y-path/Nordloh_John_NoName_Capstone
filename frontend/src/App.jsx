@@ -1,12 +1,9 @@
 import { useState, useEffect } from "react";
-import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import { BrowserRouter as Router, Link } from "react-router-dom";
 import "./App.css";
-// import { useParams, useNavigate } from "react-router-dom"
-
-// import ArtistDisplay from "./components/ArtistDisplay";
 import Form from "./components/Form";
-// import ArtistDetails from "./components/ArtistDetails";
 import Sidebar from "./components/Sidebar";
+import Navbar from "./components/Navbar";
 
 export default function App() {
   const [artists, setArtists] = useState([]); 
@@ -14,10 +11,11 @@ export default function App() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  // const [artist, setArtist] = useState(null);
+  
   const [selectedArtist, setSelectedArtist] = useState(null);
   const [showSidebar, setShowSidebar] = useState(false);
 
+  
   const getArtistsByGenre = async (genre) => {
     setLoading(true);
     setError(null);
@@ -85,7 +83,7 @@ export default function App() {
     setSelectedGenre(randomGenre);
     getArtistsByGenre(randomGenre);
   }, []);
-
+ 
   const handleArtistClick = (artist) => {
     setSelectedArtist(artist); 
     setShowSidebar(true); 
@@ -97,41 +95,13 @@ export default function App() {
   };
 
   return (
-//     <div className={`App ${selectedGenre}`}>
-//       <h1 className="title">Genreator</h1>
-//       <Form onSearch={(genre) => {
-//         setSelectedGenre(genre);
-//         getArtistsByGenre(genre);}} genres={genres} />
 
-//       {selectedGenre && <h2>{selectedGenre}</h2>}
-
-//       {loading && <p>Loading...</p>}
-//       {error && <p>{error}</p>}
-//       {artists.length > 0 && (
-//         <div className="artists">
-//           <h3>Artists:</h3>
-          
-          
-//           <div className="artist-list">
-//             {artists.map((artist) => (
-//               <div key={artist.id} className="artist-item">
-//                 {/* <a href={artist.external_urls.spotify} target="_blank" rel="noopener noreferrer"> */}
-//                 <img src={artist.images[0]?.url} alt={artist.name} className="artist-image" />
-//                 <p>{artist.name}</p>
-//                 {/* </a> */}
-//               </div>
-//             ))}
-//           </div>
-//         </div>
-//       )}
-//     </div>
-//   );
-// }
 <Router> 
       <div className={`App ${selectedGenre}`}>
-      {showSidebar && <Sidebar artist={selectedArtist}  
+       <Navbar/> 
+      {showSidebar && (<Sidebar artist={selectedArtist}  
       // isFavorite={isFavorite}handleFavorite={handleFavorite} 
-          closeSidebar={closeSidebar} />}
+          closeSidebar={closeSidebar}/>)}
         <h1 className="title">Genreator</h1>
         <Form onSearch={(genre) => {
           setSelectedGenre(genre);
@@ -164,11 +134,11 @@ export default function App() {
             </div>
           </div>
         )}
-{showSidebar && <Sidebar artist={selectedArtist} closeSidebar={closeSidebar} />}
+{showSidebar && <Sidebar artist={selectedArtist} closeSidebar={closeSidebar}/>}
         
-        {/* <Routes>
+        {/* /* <Routes>
           <Route path="/artist/:id" element={<ArtistDetails />} />
-        </Routes> */}
+        </Routes> */ }
       </div>
     </Router>
   );
