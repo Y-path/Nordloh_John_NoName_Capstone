@@ -36,16 +36,16 @@ export default function App() {
     setSelectedArtist(null);
 
     // the below does not work if stored in .env file
-  // try {
-  //     // Get Spotify client credentials from .env file
-  //     const clientId = import.meta.env.VITE_SPOTIFY_CLIENT_ID;
-  //     const clientSecret = import.meta.env.VITE_SPOTIFY_CLIENT_SECRET;
+  try {
+      // Get Spotify client credentials from .env file
+      const clientId = import.meta.env.VITE_SPOTIFY_CLIENT_ID;
+      const clientSecret = import.meta.env.VITE_SPOTIFY_CLIENT_SECRET;
 
 // console.log(clientId);
 
-    try {
-      const clientId = "";
-      const clientSecret = "";
+    // try {
+    //   const clientId = "";
+    //   const clientSecret = "";
 
       if (!clientId || !clientSecret) {
         throw new Error("Missing Spotify client credentials");
@@ -98,13 +98,13 @@ export default function App() {
     setSelectedArtist(null);
 
    
-    // try {
-    //   const clientId = import.meta.env.VITE_SPOTIFY_CLIENT_ID;
-    //   const clientSecret = import.meta.env.VITE_SPOTIFY_CLIENT_SECRET;
-
     try {
-      const clientId = "";
-      const clientSecret = "";
+      const clientId = import.meta.env.VITE_SPOTIFY_CLIENT_ID;
+      const clientSecret = import.meta.env.VITE_SPOTIFY_CLIENT_SECRET;
+
+    // try {
+    //   const clientId = "";
+    //   const clientSecret = "";
 
       if (!clientId || !clientSecret) {
         throw new Error("Missing Spotify client credentials");

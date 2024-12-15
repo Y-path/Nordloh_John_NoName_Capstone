@@ -16,8 +16,12 @@ function Artists() {
     setError(null);
 
     try {
-      const clientId = "";
-      const clientSecret = "";
+
+        const clientId = import.meta.env.VITE_SPOTIFY_CLIENT_ID;
+        const clientSecret = import.meta.env.VITE_SPOTIFY_CLIENT_SECRET;
+        
+    //   const clientId = "";
+    //   const clientSecret = "";
 
       const authResponse = await fetch("https://accounts.spotify.com/api/token", {
         method: "POST",
