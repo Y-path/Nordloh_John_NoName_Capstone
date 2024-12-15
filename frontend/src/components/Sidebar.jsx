@@ -9,25 +9,25 @@ const Sidebar = React.forwardRef(({ artist, closeSidebar }) => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    setIsFavorite(false); // Reset 
-  }, [artist]); // For prop changes
+    setIsFavorite(false);
+  }, [artist]);
 
 
-  
+
   const handleFavorite = async () => {
-    setLoading(true); 
+    setLoading(true);
     try {
-      
+
       const response = await fetch("http://localhost:5000/favorites", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          artistId: artist.id, 
-          name: artist.name, 
-          imageUrl: artist.images[0]?.url, 
-          genres: artist.genres, 
+          artistId: artist.id,
+          name: artist.name,
+          imageUrl: artist.images[0]?.url,
+          genres: artist.genres,
         }),
       });
 
@@ -36,13 +36,13 @@ const Sidebar = React.forwardRef(({ artist, closeSidebar }) => {
         throw new Error(data.message || "Failed to favorite the artist");
       }
 
-      setIsFavorite(true); 
+      setIsFavorite(true);
       alert("Artist has been added to favorites!");
     } catch (err) {
       console.error("Error: ", err);
-      setError(err.message); 
+      setError(err.message);
     } finally {
-      setLoading(false); 
+      setLoading(false);
     }
   };
 
@@ -51,7 +51,7 @@ const Sidebar = React.forwardRef(({ artist, closeSidebar }) => {
   return (
     <div className="sidebar">
       <button className="close-btn" onClick={closeSidebar}>Close</button>
-      <h2 style={{marginTop: "30px"}}>{artist.name}</h2>
+      <h2 style={{ marginTop: "30px" }}>{artist.name}</h2>
       <img src={artist.images[0]?.url} alt={artist.name} className="artist-image" />
       <p><strong>Followers:</strong> {artist.followers?.total}</p>
       <p><strong>Genres:</strong> {artist.genres?.join(", ")}</p>
@@ -65,10 +65,10 @@ const Sidebar = React.forwardRef(({ artist, closeSidebar }) => {
         className={`favorite-btn ${isFavorite ? "favorited" : ""}`}
       >
         {loading ? "Adding..." : isFavorite ? "Favorited" : "Add to Favorites"}
-      </button> 
+      </button>
       <div></div>
       {error && <p className="error">{error}</p>}
-      
+
     </div>
   );
 });

@@ -5,7 +5,7 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 1rem;
+  padding: 2px;
   text-align: center;
 }
 
@@ -119,14 +119,18 @@ div {
 /* Default styles */
 .App {
   transition: all 0.5s ease;
-  padding: 20px;
+  padding-left: 20px;
+  padding-top: 2px;
+  padding-right: 20px;
+  padding-bottom: 2px;
   font-family: Arial, sans-serif;
   border-radius: 10px;
+  
 }
 
 
 /* Pop genre */
-.Pop {
+.pop {
   /* background-color: #f0f0f0; */
   /* color: #ff007f; */
   /* background-image: linear-gradient(to right, blue, red); */
@@ -156,32 +160,32 @@ div {
   
 
 
-.Rock {
+.rock {
   background-color: #2c3e50;
   color: #e74c3c;
 }
 
-.Hip-hop {
+.hip-hop {
   background-color: #212121;
   color: #f39c12;
 }
 
-.Jazz {
+.jazz {
   background-color: #8e44ad;
   color: #ecf0f1;
 }
 
-.Classical {
+.classical {
   background-color: #fdf5e6;
   color: #2c3e50;
 }
 
-.Electronic {
+.electronic {
   background-color: #2ecc71;
   color: #c447b2;
 }
 
-.Reggae {
+.reggae {
   /* background-image: linear-gradient(to right, green, yellow, red); */
   color: black;
   font-family: "Bungee Inline", sans-serif;
@@ -247,19 +251,18 @@ div {
   
   position:fixed;
   margin-top: 0;
-  margin-bottom: 0;
-  /* right: 0; */
+  margin-bottom: 200;
   width: 400px;
   height: 75.5vh;
   background-color: rgba(0, 0, 0, 0.8);
   color: white;
   padding: 32px;
-  z-index: 1000;
+  z-index: 200;
   transition: transform 0.3s ease-in-out;
   /* transition: right 0.3s ease; */
   border-radius: 12px;
   overflow-y: auto;
-  
+  transform: translateX(0);
   
 
 }
@@ -307,4 +310,89 @@ div {
 .error {
   color: red;
   font-size: 12px;
+}
+
+.search-form {
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  
+}
+
+.search-form input {
+  padding: 10px;
+  font-size: 16px;
+  width: 200px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+ color: white;
+  
+}
+
+/* .search-form button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.search-form button:hover {
+  background-color: #0056b3;
+} */
+
+.favorites {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+   max-width: 1280px;
+   z-index: 50;
+   
+   
+   /* margin-bottom: 20px; */
+  
+}
+
+.favorite-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  
+}
+
+.favorite-item {
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  background-color: black;
+  color: white;
+  padding: 32px;
+  /* z-index: 200; */
+  align-items: center;
+  margin: 20px;
+  width: 250px;
+  
+}
+
+.favorite-item img.artist-image {
+  width: 100%;
+  height: auto;
+  max-width: 250px;
+  margin: 12px 0px;
+}
+
+.remove-favorite-button {
+  background-color: #ff4d4d; /* Red color for remove */
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 8px;
+  border-radius: 4px;
+}
+
+.remove-favorite-button:hover {
+  background-color: #ff1717; /* Darker red on hover */
 }

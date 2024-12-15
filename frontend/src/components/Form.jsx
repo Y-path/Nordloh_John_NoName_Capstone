@@ -1,31 +1,3 @@
-// import { useState } from "react";
-
-// export default function Form({ artistsearch }) {
-//   const [searchTerm, setSearchTerm] = useState("");
-
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-//     if (searchTerm) {
-//       artistsearch(searchTerm); 
-//       setSearchTerm(""); 
-//     }
-//   };
-
-//   return (
-//     <form onSubmit={handleSubmit}>
-//       <input
-//         type="text"
-//         value={searchTerm}
-//         onChange={(e) => setSearchTerm(e.target.value)}
-//         placeholder="Search for an artist"
-//       />
-//       <button type="submit">Search</button>
-//     </form>
-//   );
-// }
-
-
-
 import { useState } from "react";
 export default function Form({ onSearch, genres }) {
   const [selectedGenre, setSelectedGenre] = useState("");
@@ -52,7 +24,7 @@ export default function Form({ onSearch, genres }) {
           </option>
         ))}
       </select>&nbsp;&nbsp;
-      
+
       <button type="submit">Search</button>
     </form>
   );

@@ -21,7 +21,8 @@ const favoriteSchema = new mongoose.Schema({
   imageUrl: {
     type: String,
     required: true, 
-  }
+  },
+  
  
 });
 

@@ -51,5 +51,19 @@ router.post("/", async (req, res) => {
       res.status(500).json({ message: "Error fetching favorites", error: err });
     }
   });
+
+//  Delete a favorite
+  router.delete("/:id", async (req, res) => {
+    const { id } = req.params; 
+    try {
+      const result = await Favorite.deleteOne({ _id: id });
+      if (result.deletedCount === 0) {
+        return res.status(404).json({ message: "Favorite not found" });
+      }
+      res.status(200).json({ message: "Favorite removed" });
+    } catch (err) {
+      res.status(500).json({ message: "Error removing favorite", error: err });
+    }
+  });
   
   module.exports = router;
