@@ -14,11 +14,11 @@ router.get("/:artistId", async (req, res) => {
 
 // Post a new review
 router.post("/", async (req, res) => {
-  const { artistId, userName, rating, comment } = req.body;
+  const { name, review } = req.body;
   try {
-    const review = new Review({ artistId, userName, rating, comment });
-    await review.save();
-    res.status(201).json(review);
+    const newReview = new Review({ name, review });
+    await newReview.save();
+    res.status(201).json(newReview);
   } catch (err) {
     res.status(500).json({ message: "Error posting review", error: err });
   }

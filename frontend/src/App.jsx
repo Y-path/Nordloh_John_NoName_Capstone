@@ -6,6 +6,7 @@ import Form from "./components/Form";
 import Sidebar from "./components/Sidebar";
 import Navbar from "./components/Navbar";
 import Favorites from './pages/Favorites';
+import { Reviews } from "./pages/Reviews";
 // import Reviews from "./pages/Reviews";
 
 export default function App() {
@@ -255,6 +256,7 @@ export default function App() {
             </>
           }
           />
+          <Route path="/reviews" element={<Reviews/>}/>
           <Route path="/favorites" element={<Favorites setFavoritesLoading={setFavoritesLoading} />}
           />
         </Routes>
