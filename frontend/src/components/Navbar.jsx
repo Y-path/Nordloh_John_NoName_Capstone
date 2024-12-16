@@ -139,8 +139,10 @@ import { Link } from "react-router-dom";
 
 export default function Navbar() {
     return (
-        <nav className="bg-black rounded-lg sticky top-0 z-1000">
-            <div className="mx-auto max-w-7xl px-2 sm:px-6 ">
+        
+        <nav className="bg-black rounded-lg sticky top-0 z-1000 w-full">
+            {/* <div className="mx-auto max-w-7xl px-2 sm:px-6 "> */}
+            <div className="mx-auto max-w-screen-xl px-4 sm:px-6">
                 <div className="relative flex h-16 items-center justify-between">
                     <div className="absolute inset-y-0 left- flex items-center sm:hidden"></div>
                     <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-end">
@@ -155,16 +157,12 @@ export default function Navbar() {
                     </Link>
                         </div>
                     
-                    </div>
+                      </div>
                     
                     <Link to="/" className="text-white hover:text-purple-500 block px-4 py-2 data-[focus]:bg-gray-100 data-[focus]:outline-none">
                         Home
                     </Link>
                     <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    {/* <Link to="/artists" className="text-white hover:text-purple-500 block px-4 py-2 data-[focus]:bg-gray-100 data-[focus]:outline-none">
-                        Artists
-                    </Link>
-                    <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */}
                     <Link to="/reviews" className="text-white hover:text-purple-500 block px-4 py-2 data-[focus]:bg-gray-100 data-[focus]:outline-none">
                         Reviews
                     </Link>
@@ -179,6 +177,9 @@ export default function Navbar() {
                     
                 </div>
             </div>
+            
+            
         </nav>
+        
     )
 }

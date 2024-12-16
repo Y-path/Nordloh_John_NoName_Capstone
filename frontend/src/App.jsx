@@ -197,8 +197,8 @@ export default function App() {
 
     <Router>
       <div className={`App ${selectedGenre}`}>
-        <Navbar/> 
-        {/* {!favoritesLoading && <Navbar />} */}
+         <Navbar/>  
+      {/*{!favoritesLoading && <Navbar />}*/}
         <Routes>
           <Route path="/" element={
             <>

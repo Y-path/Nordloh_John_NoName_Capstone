@@ -121,6 +121,9 @@ const Favorites = ({ setFavoritesLoading }) => {
     return (
         <div className="favorites">
             <h2>Your Favorite Artists</h2>
+            <br></br>
+            <br></br>
+            
             {favorites.length > 0 ? (
                 <div className="favorite-list">
                     {favorites.map((artist) => (

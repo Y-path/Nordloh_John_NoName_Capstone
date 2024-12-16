@@ -126,6 +126,7 @@ div {
   font-family: Arial, sans-serif;
   border-radius: 10px;
   
+  
 }
 
 
@@ -343,10 +344,13 @@ div {
 } */
 
 .favorites {
-  padding: 20px;
+  padding: 170px;
   font-family: Arial, sans-serif;
    max-width: 1280px;
    z-index: 50;
+   margin-top: -140px;
+   
+   
    
    
    /* margin-bottom: 20px; */
@@ -358,6 +362,8 @@ div {
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
+  margin: -10px;
+  
   
 }
 
@@ -395,4 +401,20 @@ div {
 
 .remove-favorite-button:hover {
   background-color: #ff1717; /* Darker red on hover */
+}
+
+.reviews-list {
+  padding: 100px;
+  width: 100%;
+}
+
+.reviews-container {
+  padding: 60px;
+  width: 100%;
+  display: flex;
+  margin-top: -60px;
+  margin-bottom: -50px;
+  
+  
+  
 }
