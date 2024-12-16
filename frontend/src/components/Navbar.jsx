@@ -136,6 +136,7 @@
 
 
 import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export default function Navbar() {
     return (
@@ -152,28 +153,29 @@ export default function Navbar() {
                                 src="https://tailwindui.com/plus/img/logos/mark.svg?color=purple&shade=500"
                                 className="h-11 w-auto"
                             />
-                             <Link to="/" className="text-white text-4xl hover:text-purple-500 block px-7 py-2 data-[focus]:bg-gray-100 data-[focus]:outline-none">
+                             <NavLink to="/" className="text-white text-4xl hover:text-purple-500 block px-7 py-2 data-[focus]:bg-gray-100 data-[focus]:outline-none">
                         Genreator
-                    </Link>
+                    </NavLink>
                         </div>
                     
                       </div>
                     
-                    <Link to="/" className="text-white hover:text-purple-500 block px-4 py-2 data-[focus]:bg-gray-100 data-[focus]:outline-none">
+                    <NavLink to="/" className="text-white hover:text-purple-500 block px-4 py-2 data-[focus]:bg-gray-100 data-[focus]:outline-none">
                         Home
-                    </Link>
+                    </NavLink>
                     <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <Link to="/reviews" className="text-white hover:text-purple-500 block px-4 py-2 data-[focus]:bg-gray-100 data-[focus]:outline-none">
+                    <NavLink to="/reviews" className="text-white hover:text-purple-500 block px-4 py-2 data-[focus]:bg-gray-100 data-[focus]:outline-none">
                         Reviews
-                    </Link>
+                    </NavLink>
                     <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <Link to="/contact" className="text-white hover:text-purple-500 block px-4 py-2 data-[focus]:bg-gray-100 data-[focus]:outline-none">
-                        Contact
-                    </Link>
-                    <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <Link to="/favorites" className="text-white hover:text-purple-500 block px-4 py-2 data-[focus]:bg-gray-100 data-[focus]:outline-none">
+                    <NavLink to="/favorites" className="text-white hover:text-purple-500 block px-4 py-2 data-[focus]:bg-gray-100 data-[focus]:outline-none">
                         Favorites
-                    </Link>
+                    </NavLink>
+                    <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <NavLink to="/contact" className="text-white hover:text-purple-500 block px-4 py-2 data-[focus]:bg-gray-100 data-[focus]:outline-none">
+                        Contact
+                    </NavLink>
+                  
                     
                 </div>
             </div>

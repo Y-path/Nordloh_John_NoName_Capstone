@@ -9,14 +9,14 @@ const reviewRoutes = require("./backend/routes/reviewRoutes");
 const app = express();
 const PORT = process.env.PORT || 5000;
 const fs = require('fs');
-
+const multer = require('multer');
 
 
 app.use(express.static("uploads"));
 app.use(cors());
 app.use(express.json());
 // app.use(bodyParser.json());
-
+app.use(express.urlencoded({ extended: true }));
 
 
 

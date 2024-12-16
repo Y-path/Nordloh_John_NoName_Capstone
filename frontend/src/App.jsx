@@ -7,7 +7,7 @@ import Sidebar from "./components/Sidebar";
 import Navbar from "./components/Navbar";
 import Favorites from './pages/Favorites';
 import { Reviews } from "./pages/Reviews";
-// import Reviews from "./pages/Reviews";
+import { Contact } from "./pages/Contact"; 
 
 export default function App() {
   const [artists, setArtists] = useState([]);
@@ -21,8 +21,8 @@ export default function App() {
   const [showSidebar, setShowSidebar] = useState(false);
   const [favoritesLoading, setFavoritesLoading] = useState(true);
 
-  const genres = ["pop", "rock", "hip-hop", "jazz", "classical", "electronic", "punk", "emo", "new-wave", "soul",
-    "funk", "grunge", "post-punk", "folk", "country", "classic-rock", "alternative", "metal", "rap", "shoegaze", "reggae",];
+  const genres = ["pop", "rap", "rock", "hip-hop", "jazz", "classical", "electronic", "punk", "classic-rock", "r&b", "hard rock", "emo", "new-wave", "soul",
+    "funk", "grunge", "post-punk", "folk", "country", "metal", "shoegaze", "reggae"];
 
   useEffect(() => {
     const randomGenre = genres[Math.floor(Math.random() * genres.length)];
@@ -197,8 +197,8 @@ export default function App() {
 
     <Router>
       <div className={`App ${selectedGenre}`}>
-         <Navbar/>  
-      {/*{!favoritesLoading && <Navbar />}*/}
+         {/* <Navbar/>   */}
+      {!favoritesLoading && <Navbar />}
         <Routes>
           <Route path="/" element={
             <>
@@ -257,8 +257,10 @@ export default function App() {
           }
           />
           <Route path="/reviews" element={<Reviews/>}/>
-          <Route path="/favorites" element={<Favorites setFavoritesLoading={setFavoritesLoading} />}
-          />
+          <Route path="/contact" element={<Contact/>}/>
+          <Route path="/favorites" element={<Favorites setFavoritesLoading={setFavoritesLoading} />}/>
+          
+          
         </Routes>
       </div>
 

@@ -1,11 +1,11 @@
-import { PhotoIcon } from '@heroicons/react/24/solid'
+// import { PhotoIcon } from '@heroicons/react/24/solid'
 import React, { useState } from 'react';
 
 export default function ReviewForm({ onPost }) {
 
   const [name, setName] = useState('');
   const [review, setReview] = useState('');
-  // const [photo, setPhoto] = useState('');
+  const [photo, setPhoto] = useState('');
 
   const handleFileChange = (e) => {
     setPhoto(e.target.files[0]);
@@ -19,7 +19,7 @@ export default function ReviewForm({ onPost }) {
       alert('Please fill in both the name and the review');
       return;
     }
-
+    console.log('Submitting review:', { name, review });
     // const newReview = {
     //   name,
     //   review,
@@ -29,9 +29,9 @@ export default function ReviewForm({ onPost }) {
     const formData = new FormData();
     formData.append('name', name);
     formData.append('review', review);
-    // if (photo) {
-    // formData.append('photo', photo); 
-    // }
+    if (photo) {
+    formData.append('photo', photo); 
+    }
 
 
     try {
@@ -49,9 +49,12 @@ export default function ReviewForm({ onPost }) {
         
         setName('');
         setReview('');
-        // setPhoto('');
+        setPhoto(null);
+        alert('Review successfully submitted!');
       } else {
-        alert('Failed to save the review');
+        // const errorDetail = await response.text();  
+        // console.error('Error details:', errorDetail)
+        alert('Failed to save the review.');
       }
     } catch (error) {
       console.error('Error posting review:', error);
@@ -84,7 +87,7 @@ export default function ReviewForm({ onPost }) {
                   
                   <input
                     id="name"
-                    // name="name"
+                    name="name"
                     type="text"
                     placeholder="janesmith"
                     value={name}
@@ -102,7 +105,7 @@ export default function ReviewForm({ onPost }) {
               <div className="mt-2">
                 <textarea
                   id="review"
-                  // name="review"
+                  name="review"
                   rows={5}
                   value={review}
                   onChange={(e) => setReview(e.target.value)}
@@ -110,8 +113,8 @@ export default function ReviewForm({ onPost }) {
                   // defaultValue={''}
                 />
               </div>
-              <p className="mt-3 text-sm/6 text-white-600">Review an artist or concert experience.</p>
-            </div>
+             {/* <p className="mt-3 text-sm/6 text-white-600">Review an artist or concert experience.</p> */}
+             </div> 
 
             
 
@@ -121,7 +124,7 @@ export default function ReviewForm({ onPost }) {
               </label>
               <div className="mt-2 flex justify-center bg-black rounded-lg border border-dashed border-gray-900/25 px-6 py-10">
                 <div className="text-center">
-                  <PhotoIcon aria-hidden="true" className="mx-auto size-12 text-white-300" />
+                  {/* <PhotoIcon aria-hidden="true" className="mx-auto size-12 text-white-300" /> */}
                   <div className="mt-4 flex text-sm/6 text-gray-600">
                     <label
                       htmlFor="photo"

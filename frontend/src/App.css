@@ -344,7 +344,7 @@ div {
 } */
 
 .favorites {
-  padding: 170px;
+  padding: 173px;
   font-family: Arial, sans-serif;
    max-width: 1280px;
    z-index: 50;
@@ -404,7 +404,7 @@ div {
 }
 
 .reviews-list {
-  padding: 100px;
+  padding: 122px;
   width: 100%;
 }
 
@@ -417,4 +417,43 @@ div {
   
   
   
+}
+
+.contact {
+  padding: 170px;
+  /* font-family: Arial, sans-serif; */
+   max-width: 1280px;
+   z-index: 50;
+   margin-top: -140px;
+   width: 120%;
+   display: flex;
+   border-radius: 12px;
+   margin-left: -11px;
+   margin-right: -10px;
+   
+}
+
+.field {
+  margin-left: 70px;
+  margin-right: 70px;
+  margin-top: 5px;
+}
+
+.words {
+  margin-top: -30px;
+  margin-bottom: -70px;
+}
+ 
+nav a {
+  text-decoration: none;
+  padding: 10px;
+}
+
+nav a.active {
+  font-weight: bold;
+  color: #de67ff 
+}
+
+.home {
+width: 100%;
 }
