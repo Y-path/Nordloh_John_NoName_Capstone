@@ -20,11 +20,7 @@ export default function ReviewForm({ onPost }) {
       return;
     }
     console.log('Submitting review:', { name, review });
-    // const newReview = {
-    //   name,
-    //   review,
-    //   photoUrl,
-    // };
+   
 
     const formData = new FormData();
     formData.append('name', name);
@@ -109,7 +105,7 @@ export default function ReviewForm({ onPost }) {
                   value={review}
                   onChange={(e) => setReview(e.target.value)}
                   className="block w-full rounded-md bg-black px-3 py-1.5 text-white text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
-                  // defaultValue={''}
+                  
                 />
               </div>
              {/* <p className="mt-3 text-sm/6 text-white-600">Review an artist or concert experience.</p> */}
@@ -130,7 +126,7 @@ export default function ReviewForm({ onPost }) {
                       className="relative cursor-pointer rounded-md bg-white font-semibold text-indigo-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:text-indigo-500"
                     >
                       <span>Upload a photo</span>
-                      <input id="photo" type="file" accept= "image/*" className="sr-only"
+                      <input id="photo" type="file" name="photo" accept= "image/*" className="sr-only"
                        onChange={handleFileChange}   />
                     </label>
                     <p className="pl-1 text-white">or drag and drop</p>

@@ -233,7 +233,7 @@ export default function App() {
                 {selectedGenre && <h2>{selectedGenre}</h2>}
 
 
-                {loading && <p>Loading...</p>}
+                {loading && <p className="initial-load">Loading...</p>}
                 {error && <p>{error}</p>}
 
                 {artists.length > 0 && (

@@ -35,8 +35,9 @@ export const Reviews = function() {
       {reviews.length === 0 ? (
         <p>No reviews available</p>
       ) : (
-        reviews.map((review) => (
+        reviews.map((review) => (          
           <div key={review._id} className="review mb-5 p-4 border-b ">
+   
             <div className="review-header flex items-center mb-2">
               {/* <img
                 // src={review.photoUrl} 
@@ -46,10 +47,14 @@ export const Reviews = function() {
               
               <div className="review-info">
                 <h3 className="font-semibold">{review.name}</h3>
+                <p>{review.review}</p>
                 <p className="text-sm text-white-500">{new Date(review.createdAt).toLocaleDateString()}</p>
+                {review.photoUrl && (
+                  <img src={review.photoUrl} alt="Review Photo" className="review-photo" />
+                )}
               </div>
             </div>
-            <p>{review.review}</p>
+            
           </div>
         ))
       )}
@@ -62,10 +67,3 @@ export const Reviews = function() {
     </div>
   );
 }
-//     return(
-//         <>
-//         <h1>Reviews</h1>
-//         <ReviewForm/>
-//         </>
-//     )
-// }

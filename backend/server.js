@@ -1,26 +1,21 @@
 const express = require('express');
 const mongoose = require('mongoose');
-// const path = require("path");
 const cors = require('cors');
-// const bodyParser = require("body-parser");
 require('dotenv').config();
-// const axios = require('axios');
-const reviewRoutes = require("./backend/routes/reviewRoutes");
+const reviewRoutes = require("./routes/reviewRoutes");
 const app = express();
 const PORT = process.env.PORT || 5000;
-// const fs = require('fs');
 
 
 
 
-
-app.use(express.static("uploads"));
 app.use(cors());
 app.use(express.json());
-// app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: true }));
 
 
+app.use('/uploads', express.static('uploads'));
+   
 
 
 mongoose.connect(
@@ -35,9 +30,9 @@ app.get('/', (req, res) => {
     res.send('This project has no name');
   });
 
-const artistRoutes = require("./backend/routes/artistRoutes")
+const artistRoutes = require("./routes/artistRoutes")
 // const reviewRoutes = require("./backend/routes/reviewRoutes");
-const favoriteRoutes = require("./backend/routes/favoriteRoutes");
+const favoriteRoutes = require("./routes/favoriteRoutes");
 
 app.use("/artists", artistRoutes);
 app.use("/reviews", reviewRoutes);

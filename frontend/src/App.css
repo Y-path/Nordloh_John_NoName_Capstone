@@ -55,6 +55,7 @@ div {
   border-radius: 10px;
   
   
+  
 }
 
 
@@ -99,7 +100,7 @@ div {
   font-weight: 400;
   font-style: normal;
   background-color: #2c3e50;
-  color: #e74c3c;
+  color: black;
   background: repeating-linear-gradient(
     190deg,
     rgb(255 0 0 / 50%) 40px,
@@ -203,7 +204,14 @@ div {
   );
 }
 
+.initial-load {
+  padding-right: 320px;
+  padding-left: 320px;
+  margin-right: 270px;
+  margin-left: 270px;
+  margin-top: 100px;
 
+}
 
 
 .artist-list {

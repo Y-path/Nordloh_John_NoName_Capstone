@@ -1,25 +1,32 @@
 const express = require("express");
 const Review = require("../models/Review");
 const router = express.Router();
-// const path = require("path");
 const multer = require('multer');
 
 
 
-// const storage = multer.memoryStorage();
-// const upload = multer({ storage: storage });
-// const upload = multer({ dest: "/../../frontend/uploads/" });
+
+
 const upload = multer({ 
-  dest: 'uploads/', 
-  limits: { fileSize: 5 * 1024 * 1024 } // Max file size 5MB
+  dest: 'uploads/photos/', 
+  limits: { fileSize: 5 * 1024 * 1024 } 
 });
+
+
+
 
 // Post a new review
 router.post("/", upload.single('photo'), async (req, res) => {
+  
   console.log('Request body:', req.body);
   console.log('Uploaded file:', req.file);
   const { name, review } = req.body;
-  const photo = req.file;
+ 
+
+
+  const photoUrl = `http://localhost:5000/uploads/photos/${req.file.filename}`;
+
+
   if (!name || !review) {
     return res.status(400).send('Name and review are required');
   }
@@ -27,8 +34,7 @@ router.post("/", upload.single('photo'), async (req, res) => {
   const newReview = new Review ({
     name,
     review,
-    // photo: photo ? photo.path : null,
-    photoUrl: photo ? photo.path : null, 
+    photoUrl,
     createdAt: new Date(),  
   });
 
@@ -43,11 +49,7 @@ router.post("/", upload.single('photo'), async (req, res) => {
   }
 });
 
-  // console.log('Received review:', { name, review, photo });
-
-  // res.status(200).json({ name, review, photoUrl: photo ? `/../..frontend/uploads/${photo.filename}` : null });
-
-// });
+ 
 
 // Get 5 reviews
 router.get("/", async (req, res) => {
@@ -115,27 +117,3 @@ router.delete("/:id", async (req, res) => {
 module.exports = router;
 
 
-
-// try {
-
-//   const newReview = new Review({ name, review });
-//   await newReview.save();
-
-//   res.status(201).json(newReview);
-// } catch (err) {
-//   console.error(err);
-//   res.status(500).json({ message: 'Error posting review' });
-// }
-// });
-
-//   const { name, review, photo } = req.body;
-//     try {
-//     const newReview = new Review({ name, review, photo});
-//     await newReview.save();
-//     res.status(201).json(newReview);
-//   } catch (err) {
-//     res.status(500).json({ message: "Error posting review", error: err });
-//   }
-// });
-
-module.exports = router;
