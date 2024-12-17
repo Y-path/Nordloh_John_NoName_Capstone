@@ -197,8 +197,9 @@ export default function App() {
 
     <Router>
       <div className={`App ${selectedGenre}`}>
-         {/* <Navbar/>   */}
-      {!favoritesLoading && <Navbar />}
+         <Navbar/>  
+      {/* {!favoritesLoading && <Navbar />} */}
+      <div className="nav">
         <Routes>
           <Route path="/" element={
             <>
@@ -262,6 +263,7 @@ export default function App() {
           
           
         </Routes>
+        </div>
       </div>
 
 

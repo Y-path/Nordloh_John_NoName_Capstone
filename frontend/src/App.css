@@ -9,49 +9,6 @@
   text-align: center;
 }
 
-/* .logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-} */
-
-/* App.css */
-/* .App {
-  font-family: Arial, sans-serif;
-  padding: 1px; */
-  /* text-align: center; */
-/* } */
-
 h1 {
   font-size: 55px;
   /* color:  #747bff; */
@@ -60,12 +17,6 @@ h1 {
 h2 {
   font-size: 40px;
 }
-
-/* .title {
-  display:grid;
-  justify-content: left;
-
-} */
 
 form {
   margin-bottom: 20px;
@@ -94,29 +45,6 @@ div {
   margin: 20px 0;
 }
 
-/* .albums {
-  margin-top: 20px;
-}
-
-.album-list {
-  display: flex;
-  flex-wrap: wrap; 
-  gap: 20px; 
-  justify-content: center; 
-}
-
-.album-item {
-  width: 200px; 
-  text-align: center;
-}
-
-.album-image {
-  width: 100%; 
-  height: auto; 
-  border-radius: 2px; 
-} */
-
-/* Default styles */
 .App {
   transition: all 0.5s ease;
   padding-left: 20px;
@@ -130,14 +58,11 @@ div {
 }
 
 
-/* Pop genre */
+
 .pop {
-  /* background-color: #f0f0f0; */
-  /* color: #ff007f; */
-  /* background-image: linear-gradient(to right, blue, red); */
   font-family: "Quicksand", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 300;
+  font-weight: 400;
   font-style: normal;
   background: repeating-conic-gradient(
     from 0deg at 80% 50%,
@@ -158,36 +83,108 @@ div {
     #30f88aff 16.5% 25%
   );
 }
+
+.rap {
+  font-family: "Saira Stencil One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  background: conic-gradient(at 0% 10%, red 20%, rgb(91, 91, 91) 30%, rgb(0, 0, 0) 50%);
+}
+
   
 
 
 .rock {
+  font-family: "RocknRoll One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
   background-color: #2c3e50;
   color: #e74c3c;
+  background: repeating-linear-gradient(
+    190deg,
+    rgb(255 0 0 / 50%) 40px,
+    rgb(255 153 0 / 50%) 80px,
+    rgb(0 0 255 / 50%) 200px,
+    rgb(75 0 130 / 50%) 240px,
+    rgb(238 130 238 / 50%) 280px,
+    rgb(255 0 0 / 50%) 300px
+  ),
+  repeating-linear-gradient(
+    -190deg,
+    rgb(255 0 0 / 50%) 30px,
+    rgb(255 153 0 / 50%) 60px,
+    rgb(255 255 0 / 50%) 90px,
+    rgb(0 0 255 / 50%) 150px,
+    rgb(75 0 130 / 50%) 180px,
+    rgb(238 130 238 / 50%) 210px,
+    rgb(255 0 0 / 50%) 230px
+  ),
+  repeating-linear-gradient(
+    23deg,
+    black 50px,
+    black 100px,
+    black 150px,
+    black 200px,
+    black 250px,
+    black 300px,
+    black 350px,
+    black 370px
+  );
 }
 
 .hip-hop {
+  font-family: "Rye", serif;
+  font-weight: 400;
+  font-style: normal;
   background-color: #212121;
   color: #f39c12;
+  background: linear-gradient(to bottom left, #212121 50%, palegoldenrod 50%);
 }
 
+
 .jazz {
-  background-color: #8e44ad;
-  color: #ecf0f1;
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: italic;
+  background-color: #FFC0CB;
+  color: brown;
 }
 
 .classical {
+  font-family: "EB Garamond", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
   background-color: #fdf5e6;
   color: #2c3e50;
 }
 
 .electronic {
-  background-color: #2ecc71;
-  color: #c447b2;
+  font-family: "Tourney", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+  background: radial-gradient(yellow 20px, green 35%, #1e90ff 60%);
+  
 }
 
+.punk {
+  font-family: "Special Elite", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  color: hotpink;
+  background-color: black;
+ 
+}
+
+
+
+
+  
 .reggae {
-  /* background-image: linear-gradient(to right, green, yellow, red); */
   color: black;
   font-family: "Bungee Inline", sans-serif;
   font-weight: 400;
@@ -196,17 +193,12 @@ div {
     to left,
     red 20%,
     yellow 50%,
-    /* yellow 45%,
-    cyan 55%,
-    cyan 70%, */
     green 80%
   );
   background: linear-gradient(
     to left,
     red 20%,
     yellow 50%,
-    /* red 30% 45%,
-    cyan 55% 70%, */
     green 80%
   );
 }
@@ -300,7 +292,7 @@ div {
 }
 
 .favorite-btn.favorited {
-  background-color: #4CAF50; /* Green when favorited */
+  background-color: #4CAF50; 
 }
 
 .favorite-btn:disabled {
@@ -330,32 +322,21 @@ div {
   
 }
 
-/* .search-form button {
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+.favorites-loading {
+  padding-right: 235px;
+  padding-left: 235px;
+  margin-right: 230px;
+  margin-left: 230px;
+  margin-top: 100px;
 }
-
-.search-form button:hover {
-  background-color: #0056b3;
-} */
 
 .favorites {
   padding: 173px;
-  font-family: Arial, sans-serif;
-   max-width: 1280px;
+  max-width: 1280px;
    z-index: 50;
    margin-top: -140px;
-   
-   
-   
-   
-   /* margin-bottom: 20px; */
-  
-}
+    
+   }
 
 .favorite-list {
   display: flex;
@@ -363,11 +344,11 @@ div {
   gap: 20px;
   justify-content: center;
   margin: -10px;
-  
-  
+   
 }
 
 .favorite-item {
+  font-family: Arial, sans-serif;
   padding: 10px;
   border-radius: 10px;
   background-color: #f9f9f9;
@@ -403,19 +384,31 @@ div {
   background-color: #ff1717; /* Darker red on hover */
 }
 
+
 .reviews-list {
-  padding: 122px;
+  padding-right: 120px;
   width: 100%;
+  /* margin-left: -25px; */
+  padding-top: 30px;
+  padding-left: 100px;
+  
 }
 
 .reviews-container {
-  padding: 60px;
+  padding: 100px;
   width: 100%;
   display: flex;
   margin-top: -60px;
   margin-bottom: -50px;
+  justify-content: center;
   
-  
+}
+
+.review-form {
+  width: 100%;
+  padding-top: 10px;
+  padding-left: 120px;
+  padding-right: 100px;
   
 }
 
@@ -425,23 +418,29 @@ div {
    max-width: 1280px;
    z-index: 50;
    margin-top: -140px;
-   width: 120%;
+   width: 100%;
    display: flex;
    border-radius: 12px;
-   margin-left: -11px;
-   margin-right: -10px;
-   
+   margin-left: -18px;
+   margin-right: 20px;
+   padding-left: 210px;
+   padding-left: 210px;
 }
 
 .field {
   margin-left: 70px;
   margin-right: 70px;
   margin-top: 5px;
+  
 }
 
 .words {
   margin-top: -30px;
   margin-bottom: -70px;
+}
+
+.nav {
+  min-height: 80vh;
 }
  
 nav a {

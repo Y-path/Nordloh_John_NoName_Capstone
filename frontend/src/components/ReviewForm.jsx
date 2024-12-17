@@ -35,8 +35,7 @@ export default function ReviewForm({ onPost }) {
 
 
     try {
-      // Post to backend
-      const response = await fetch('http://localhost:5000/reviews', {
+        const response = await fetch('http://localhost:5000/reviews', {
         method: 'POST',
         body: formData, 
       });
@@ -52,8 +51,8 @@ export default function ReviewForm({ onPost }) {
         setPhoto(null);
         alert('Review successfully submitted!');
       } else {
-        // const errorDetail = await response.text();  
-        // console.error('Error details:', errorDetail)
+        const errorDetail = await response.text();  
+        console.error('Error details:', errorDetail)
         alert('Failed to save the review.');
       }
     } catch (error) {

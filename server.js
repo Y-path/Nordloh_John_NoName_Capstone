@@ -1,6 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const path = require("path");
+// const path = require("path");
 const cors = require('cors');
 // const bodyParser = require("body-parser");
 require('dotenv').config();
@@ -8,8 +8,10 @@ require('dotenv').config();
 const reviewRoutes = require("./backend/routes/reviewRoutes");
 const app = express();
 const PORT = process.env.PORT || 5000;
-const fs = require('fs');
-const multer = require('multer');
+// const fs = require('fs');
+
+
+
 
 
 app.use(express.static("uploads"));

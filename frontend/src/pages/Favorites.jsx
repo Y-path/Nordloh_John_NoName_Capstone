@@ -111,7 +111,7 @@ const Favorites = ({ setFavoritesLoading }) => {
 
 
     if (loading) {
-        return <p style={{ fontSize: "30px" }}>Loading your favorites...</p>;
+        return <p style={{ fontSize: "30px"}} className='favorites-loading'>Loading your favorites...</p>;
     }
 
     if (error) {
