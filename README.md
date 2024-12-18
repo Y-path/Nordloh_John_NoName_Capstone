@@ -1,8 +1,8 @@
-# SBA 319 (MongoDB Database Application)
+# CP 325.9 (Capstone)
 
 ## Description
 
-Genreator is a dynamic music application that adapts the styling to the selected artist or genre.  It enables the user to favorite artists 
+Genreator(NoName) is a dynamic music application that adapts the styling to the selected artist or genre.  It enables the user to favorite artists 
 
 and post reviews with photos related to artists or concert experiences.  The Spotify API and MongoDB to recieve and store data.
 
