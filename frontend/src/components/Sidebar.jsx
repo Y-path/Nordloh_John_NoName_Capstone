@@ -1,8 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
 
-// function Sidebar({ artist, closeSidebar, isFavorite, handleFavorite }) {
-//   if (!artist) return null; 
 const Sidebar = React.forwardRef(({ artist, closeSidebar }) => {
   const [isFavorite, setIsFavorite] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -11,8 +9,6 @@ const Sidebar = React.forwardRef(({ artist, closeSidebar }) => {
   useEffect(() => {
     setIsFavorite(false);
   }, [artist]);
-
-
 
   const handleFavorite = async () => {
     setLoading(true);
@@ -50,14 +46,14 @@ const Sidebar = React.forwardRef(({ artist, closeSidebar }) => {
 
   return (
     <div className="sidebar">
-      <button className="close-btn" onClick={closeSidebar}>Close</button>
+      <button className="close-btn rounded-md bg-purple-600 px-3 py-2 shadow-sm hover:bg-purple-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" onClick={closeSidebar}>Close</button>
       <h2 style={{ marginTop: "30px" }}>{artist.name}</h2>
       <img src={artist.images[0]?.url} alt={artist.name} className="artist-image" />
       <p><strong>Followers:</strong> {artist.followers?.total}</p>
       <p><strong>Genres:</strong> {artist.genres?.join(", ")}</p>
       <p><strong>Popularity:</strong> {artist.popularity}</p>
       &nbsp;&nbsp;
-      <a href={artist.external_urls?.spotify} target="_blank" rel="noopener noreferrer">Visit on Spotify</a>&nbsp;&nbsp;
+      <a href={artist.external_urls?.spotify} target="_blank" rel="noopener noreferrer" className="spotify text-green-500 hover:text-green-400">Visit on Spotify</a>&nbsp;&nbsp;
       <div></div>
       <button
         onClick={handleFavorite}
@@ -68,7 +64,6 @@ const Sidebar = React.forwardRef(({ artist, closeSidebar }) => {
       </button>
       <div></div>
       {error && <p className="error">{error}</p>}
-
     </div>
   );
 });

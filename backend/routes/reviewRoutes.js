@@ -1,55 +1,41 @@
 const express = require("express");
 const Review = require("../models/Review");
 const router = express.Router();
-const multer = require('multer');
+const multer = require("multer");
 
-
-
-
-
-const upload = multer({ 
-  dest: 'uploads/photos/', 
-  limits: { fileSize: 5 * 1024 * 1024 } 
+const upload = multer({
+  dest: "uploads/photos/",
+  limits: { fileSize: 5 * 1024 * 1024 }
 });
 
-
-
-
 // Post a new review
-router.post("/", upload.single('photo'), async (req, res) => {
-  
-  console.log('Request body:', req.body);
-  console.log('Uploaded file:', req.file);
+router.post("/", upload.single("photo"), async (req, res) => {
+
+  console.log("Request body:", req.body);
+  console.log("Uploaded file:", req.file);
   const { name, review } = req.body;
- 
-
-
   const photoUrl = `http://localhost:5000/uploads/photos/${req.file.filename}`;
 
-
   if (!name || !review) {
-    return res.status(400).send('Name and review are required');
+    return res.status(400).send("Name and review are required");
   }
 
-  const newReview = new Review ({
+  const newReview = new Review({
     name,
     review,
     photoUrl,
-    createdAt: new Date(),  
+    createdAt: new Date(),
   });
 
-  
   console.log(newReview);
   try {
     await newReview.save();
     res.status(200).json(newReview);
   } catch (err) {
-    console.error('Error saving review:', err);
-    res.status(500).json({ message: 'Failed to save review', error: err.message || 'Unknown error', });
+    console.error("Error saving review:", err);
+    res.status(500).json({ message: "Failed to save review", error: err.message || "Unknown error", });
   }
 });
-
- 
 
 // Get 5 reviews
 router.get("/", async (req, res) => {
@@ -64,16 +50,15 @@ router.get("/", async (req, res) => {
 // Get a specific review
 router.get("/:id", async (req, res) => {
   const { id } = req.params;
-
   try {
     const review = await Review.findById(id);
     if (!review) {
-      return res.status(404).json({ message: 'No review found' });
+      return res.status(404).json({ message: "No review found " });
     }
     res.status(200).json(review);
   } catch (err) {
     console.error(err);
-    res.status(500).json({ message: 'Server error' });
+    res.status(500).json({ message: "Server error" });
   }
 });
 
@@ -81,7 +66,6 @@ router.get("/:id", async (req, res) => {
 router.put("/:id", async (req, res) => {
   const { id } = req.params;
   const { name, review, photo } = req.body;
-
   try {
     const updatedReview = await Review.findOneAndUpdate({ _id: id },
 
@@ -90,13 +74,13 @@ router.put("/:id", async (req, res) => {
     );
 
     if (!updatedReview) {
-      return res.status(404).json({ message: 'No review found' });
+      return res.status(404).json({ message: "No review found" });
     }
 
     res.status(200).json(updatedReview);
   } catch (err) {
     console.error(err);
-    res.status(500).json({ message: 'Server error' });
+    res.status(500).json({ message: "Server error" });
   }
 });
 

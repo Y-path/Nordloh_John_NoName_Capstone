@@ -1,27 +1,25 @@
-
 import { useState, useEffect } from "react";
-import { BrowserRouter as Router, Link, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Form from "./components/Form";
 import Sidebar from "./components/Sidebar";
 import Navbar from "./components/Navbar";
-import Favorites from './pages/Favorites';
+import Favorites from "./pages/Favorites";
 import { Reviews } from "./pages/Reviews";
-import { Contact } from "./pages/Contact"; 
+import { Contact } from "./pages/Contact";
 
 export default function App() {
   const [artists, setArtists] = useState([]);
   const [selectedGenre, setSelectedGenre] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-
   const [searchQuery, setSearchQuery] = useState("");
-
   const [selectedArtist, setSelectedArtist] = useState(null);
   const [showSidebar, setShowSidebar] = useState(false);
   const [favoritesLoading, setFavoritesLoading] = useState(true);
+  const [isArtistClick, setIsArtistClick] = useState(false);
 
-  const genres = ["pop", "rap", "rock", "hip-hop", "jazz", "classical", "electronic", "punk", "classic-rock", "r&b", "hard rock", "emo", "new-wave", "soul",
+  const genres = ["pop", "rap", "rock", "hip-hop", "jazz", "classical", "electronic", "punk", "classic-rock", "r&b", "hard-rock", "emo", "new-wave", "soul",
     "funk", "grunge", "post-punk", "folk", "country", "metal", "shoegaze", "reggae"];
 
   useEffect(() => {
@@ -30,28 +28,26 @@ export default function App() {
     getArtistsByGenre(randomGenre);
   }, []);
 
+  useEffect(() => {
+    if (selectedGenre && !isArtistClick) {
+      getArtistsByGenre(selectedGenre);
+    }
+    setIsArtistClick(false);
+  }, [selectedGenre]);
 
   const getArtistsByGenre = async (genre) => {
+    console.log("Fetching artists for genre:", genre);
     setLoading(true);
     setError(null);
     setSelectedArtist(null);
 
-    // the below does not work if stored in .env file
-  try {
-      // Get Spotify client credentials from .env file
+    try {
       const clientId = import.meta.env.VITE_SPOTIFY_CLIENT_ID;
       const clientSecret = import.meta.env.VITE_SPOTIFY_CLIENT_SECRET;
-
-// console.log(clientId);
-
-    // try {
-    //   const clientId = "";
-    //   const clientSecret = "";
 
       if (!clientId || !clientSecret) {
         throw new Error("Missing Spotify client credentials");
       }
-
 
       const authResponse = await fetch("https://accounts.spotify.com/api/token", {
         method: "POST",
@@ -64,7 +60,6 @@ export default function App() {
 
       const authData = await authResponse.json();
       const accessToken = authData.access_token;
-
 
       const response = await fetch(
         `https://api.spotify.com/v1/search?q=genre:${genre}&type=artist&limit=30`,
@@ -91,21 +86,14 @@ export default function App() {
     }
   };
 
-
-
   const getArtistsByName = async (name) => {
     setLoading(true);
     setError(null);
     setSelectedArtist(null);
 
-   
     try {
       const clientId = import.meta.env.VITE_SPOTIFY_CLIENT_ID;
       const clientSecret = import.meta.env.VITE_SPOTIFY_CLIENT_SECRET;
-
-    // try {
-    //   const clientId = "";
-    //   const clientSecret = "";
 
       if (!clientId || !clientSecret) {
         throw new Error("Missing Spotify client credentials");
@@ -135,19 +123,6 @@ export default function App() {
       const data = await response.json();
       if (data.artists.items.length > 0) {
         setArtists(data.artists.items);
-
-        const artist = data.artists.items[0];
-
-        if (artist.genres && artist.genres.length > 0) {
-
-          const matchingGenre = artist.genres.find(genre => genres.includes(genre));
-
-          if (matchingGenre) {
-            setSelectedGenre(matchingGenre);  
-          }
-        }
-
-
       } else {
         setError("No artists found for this name");
         setArtists([]);
@@ -161,29 +136,17 @@ export default function App() {
     }
   };
 
-
-
-
   const handleArtistClick = (artist) => {
     setSelectedArtist(artist);
-    setShowSidebar(true);
     setSearchQuery("");
+    setShowSidebar(true);
+    setIsArtistClick(true);
+
     if (artist.genres && artist.genres.length > 0) {
-      setSelectedGenre(artist.genres[0]);
+      const artistGenre = artist.genres.find(genre => genres.includes(genre)) || artist.genres[0];
+      setSelectedGenre(artistGenre);
     }
   };
-
-  const closeSidebar = () => {
-    setShowSidebar(false);
-    setSelectedArtist(null);
-  };
-
-
-
-  const handleSearchChange = (e) => {
-    setSearchQuery(e.target.value);
-  };
-
 
   const handleSearchSubmit = (e) => {
     e.preventDefault();
@@ -192,81 +155,69 @@ export default function App() {
     }
   };
 
+  const handleSearchChange = (e) => {
+    setSearchQuery(e.target.value);
+  };
+
+  const closeSidebar = () => {
+    setShowSidebar(false);
+    setSelectedArtist(null);
+  };
 
   return (
-
     <Router>
       <div className={`App ${selectedGenre}`}>
-         <Navbar/>  
-      {/* {!favoritesLoading && <Navbar />} */}
-      <div className="nav">
-        <Routes>
-          <Route path="/" element={
-            <>
-              <div className="Home">
+        <Navbar />
+        <div className="nav">
+          <Routes>
+            <Route path="/" element={
+              <>
+                <div className="Home">
+                  {showSidebar && (<Sidebar artist={selectedArtist}
+                    closeSidebar={closeSidebar} />)}
+                  <Form onSearch={(genre) => {
+                    setSelectedGenre(genre);
+                    setSelectedArtist(null);
+                    setIsArtistClick(false);
+                    getArtistsByGenre(genre);
+                  }} genres={genres} />
 
+                  <form onSubmit={handleSearchSubmit} className="search-form">
+                    <input
+                      type="text"
+                      value={searchQuery}
+                      onChange={handleSearchChange}
+                      placeholder="Artist name"
+                    />
+                    <button type="submit">Search</button>
+                  </form>
 
-                {showSidebar && (<Sidebar artist={selectedArtist}
-                  // isFavorite={isFavorite}handleFavorite={handleFavorite} 
-                  closeSidebar={closeSidebar} />)}
-                {/* <h1 className="title">Genreator</h1>  */}
-                <Form onSearch={(genre) => {
-                  setSelectedGenre(genre);
-                  setSelectedArtist(null);
-                  getArtistsByGenre(genre);
-                  setShowSidebar(false);
-                }} genres={genres} />
-
-
-                <form onSubmit={handleSearchSubmit} className="search-form">
-                  <input
-                    type="text"
-                    value={searchQuery}
-                    onChange={handleSearchChange}
-                    placeholder="Artist name"
-                  />
-                  <button type="submit">Search</button>
-                </form>
-
-
-
-                {selectedGenre && <h2>{selectedGenre}</h2>}
-
-
-                {loading && <p className="initial-load">Loading...</p>}
-                {error && <p>{error}</p>}
-
-                {artists.length > 0 && (
-                  <div className="artists">
-                    <h3>Artists:</h3>
-                    <div className="artist-list">
-                      {artists.map((artist) => (
-                        <div key={artist.id} className="artist-item" onClick={() => handleArtistClick(artist)}>
-                          {/* <Link to={`/artist/${artist.id}`} className="artist-link"> */}
-                          <img src={artist.images[0]?.url} alt={artist.name} className="artist-image" />
-                          <p>{artist.name}</p>
-                          {/* </Link> */}
-                        </div>
-                      ))}
+                  {selectedGenre && <h2>{selectedGenre}</h2>}
+                  {loading && <p className="initial-load">Loading...</p>}
+                  {error && <p>{error}</p>}
+                  {artists.length > 0 && (
+                    <div className="artists">
+                      <h3>Artists:</h3>
+                      <div className="artist-list">
+                        {artists.map((artist) => (
+                          <div key={artist.id} className="artist-item" onClick={() => handleArtistClick(artist)}>
+                            <img src={artist.images[0]?.url} alt={artist.name} className="artist-image" />
+                            <p>{artist.name}</p>
+                          </div>
+                        ))}
+                      </div>
                     </div>
-                  </div>
-                )}
-
-
-              </div>
-            </>
-          }
-          />
-          <Route path="/reviews" element={<Reviews/>}/>
-          <Route path="/contact" element={<Contact/>}/>
-          <Route path="/favorites" element={<Favorites setFavoritesLoading={setFavoritesLoading} />}/>
-          
-          
-        </Routes>
+                  )}
+                </div>
+              </>
+            }
+            />
+            <Route path="/reviews" element={<Reviews />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/favorites" element={<Favorites setFavoritesLoading={setFavoritesLoading} />} />
+          </Routes>
         </div>
       </div>
-
-
     </Router>
   );
 }

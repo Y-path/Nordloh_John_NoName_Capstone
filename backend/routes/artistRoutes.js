@@ -12,7 +12,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-// Add new artist
+// Add a new artist
 router.post("/", async (req, res) => {
   const { name, genre, images } = req.body;
   try {

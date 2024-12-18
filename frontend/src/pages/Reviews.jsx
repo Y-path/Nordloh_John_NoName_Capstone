@@ -47,7 +47,9 @@ export const Reviews = function() {
               
               <div className="review-info">
                 <h3 className="font-semibold">{review.name}</h3>
+                <br></br>
                 <p>{review.review}</p>
+                <br></br>
                 <p className="text-sm text-white-500">{new Date(review.createdAt).toLocaleDateString()}</p>
                 {review.photoUrl && (
                   <img src={review.photoUrl} alt="Review Photo" className="review-photo" />

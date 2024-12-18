@@ -24,7 +24,6 @@ export default function Form({ onSearch, genres }) {
           </option>
         ))}
       </select>&nbsp;&nbsp;
-
       <button type="submit">Search</button>
     </form>
   );

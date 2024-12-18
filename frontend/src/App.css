@@ -11,7 +11,6 @@
 
 h1 {
   font-size: 55px;
-  /* color:  #747bff; */
 }
 
 h2 {
@@ -35,11 +34,10 @@ button {
   cursor: pointer;
 }
 
- img { 
-  /* max-width: 200px; */
+img {
   margin-top: 10px;
   border-radius: 3px;
-} 
+}
 
 div {
   margin: 20px 0;
@@ -53,36 +51,25 @@ div {
   padding-bottom: 2px;
   font-family: Arial, sans-serif;
   border-radius: 10px;
-  
-  
-  
 }
-
-
 
 .pop {
   font-family: "Quicksand", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  background: repeating-conic-gradient(
-    from 0deg at 80% 50%,
-    #5691f580 0% 8.25%,
-    #b338ff80 8.25% 16.5%,
-    #f8305880 16.5% 25%
-  ),
-  repeating-conic-gradient(
-    from 15deg at 50% 50%,
-    #e856f580 0% 8.25%,
-    #ff384c80 8.25% 16.5%,
-    #e7f83080 16.5% 25%
-  ),
-  repeating-conic-gradient(
-    from 0deg at 20% 50%,
-    #f58356ff 0% 8.25%,
-    #caff38ff 8.25% 16.5%,
-    #30f88aff 16.5% 25%
-  );
+  background: repeating-conic-gradient(from 0deg at 80% 50%,
+      #5691f580 0% 8.25%,
+      #b338ff80 8.25% 16.5%,
+      #f8305880 16.5% 25%),
+    repeating-conic-gradient(from 15deg at 50% 50%,
+      #e856f580 0% 8.25%,
+      #ff384c80 8.25% 16.5%,
+      #e7f83080 16.5% 25%),
+    repeating-conic-gradient(from 0deg at 20% 50%,
+      #f58356ff 0% 8.25%,
+      #caff38ff 8.25% 16.5%,
+      #30f88aff 16.5% 25%);
 }
 
 .rap {
@@ -92,45 +79,36 @@ div {
   background: conic-gradient(at 0% 10%, red 20%, rgb(91, 91, 91) 30%, rgb(0, 0, 0) 50%);
 }
 
-  
-
-
 .rock {
   font-family: "RocknRoll One", sans-serif;
   font-weight: 400;
   font-style: normal;
   background-color: #2c3e50;
   color: black;
-  background: repeating-linear-gradient(
-    190deg,
-    rgb(255 0 0 / 50%) 40px,
-    rgb(255 153 0 / 50%) 80px,
-    rgb(0 0 255 / 50%) 200px,
-    rgb(75 0 130 / 50%) 240px,
-    rgb(238 130 238 / 50%) 280px,
-    rgb(255 0 0 / 50%) 300px
-  ),
-  repeating-linear-gradient(
-    -190deg,
-    rgb(255 0 0 / 50%) 30px,
-    rgb(255 153 0 / 50%) 60px,
-    rgb(255 255 0 / 50%) 90px,
-    rgb(0 0 255 / 50%) 150px,
-    rgb(75 0 130 / 50%) 180px,
-    rgb(238 130 238 / 50%) 210px,
-    rgb(255 0 0 / 50%) 230px
-  ),
-  repeating-linear-gradient(
-    23deg,
-    black 50px,
-    black 100px,
-    black 150px,
-    black 200px,
-    black 250px,
-    black 300px,
-    black 350px,
-    black 370px
-  );
+  background: repeating-linear-gradient(190deg,
+      rgb(255 0 0 / 50%) 40px,
+      rgb(255 153 0 / 50%) 80px,
+      rgb(0 0 255 / 50%) 200px,
+      rgb(75 0 130 / 50%) 240px,
+      rgb(238 130 238 / 50%) 280px,
+      rgb(255 0 0 / 50%) 300px),
+    repeating-linear-gradient(-190deg,
+      rgb(255 0 0 / 50%) 30px,
+      rgb(255 153 0 / 50%) 60px,
+      rgb(255 255 0 / 50%) 90px,
+      rgb(0 0 255 / 50%) 150px,
+      rgb(75 0 130 / 50%) 180px,
+      rgb(238 130 238 / 50%) 210px,
+      rgb(255 0 0 / 50%) 230px),
+    repeating-linear-gradient(23deg,
+      black 50px,
+      black 100px,
+      black 150px,
+      black 200px,
+      black 250px,
+      black 300px,
+      black 350px,
+      black 370px);
 }
 
 .hip-hop {
@@ -141,7 +119,6 @@ div {
   color: #f39c12;
   background: linear-gradient(to bottom left, #212121 50%, palegoldenrod 50%);
 }
-
 
 .jazz {
   font-family: "Playfair Display", serif;
@@ -169,7 +146,6 @@ div {
   font-variation-settings:
     "wdth" 100;
   background: radial-gradient(yellow 20px, green 35%, #1e90ff 60%);
-  
 }
 
 .punk {
@@ -178,30 +154,111 @@ div {
   font-style: normal;
   color: hotpink;
   background-color: black;
- 
 }
 
+.classic-rock {
+  background-image: radial-gradient(circle at 46% 12%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 3%, transparent 3%, transparent 100%), radial-gradient(circle at 43% 86%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 3%, transparent 3%, transparent 100%), radial-gradient(circle at 36% 69%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 3%, transparent 3%, transparent 100%), radial-gradient(circle at 74% 62%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 7%, transparent 7%, transparent 100%), radial-gradient(circle at 11% 65%, rgba(255, 255, 255, 0.01) 0%, rgba(255, 255, 255, 0.01) 7%, transparent 7%, transparent 100%), radial-gradient(circle at 44% 92%, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.02) 7%, transparent 7%, transparent 100%), radial-gradient(circle at 68% 61%, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.02) 7%, transparent 7%, transparent 100%), radial-gradient(circle at 88% 9%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 7%, transparent 7%, transparent 100%), radial-gradient(circle at 59% 86%, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.02) 7%, transparent 7%, transparent 100%), radial-gradient(circle at 91% 23%, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.02) 5%, transparent 5%, transparent 100%), radial-gradient(circle at 67% 78%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 5%, transparent 5%, transparent 100%), radial-gradient(circle at 0% 17%, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.02) 5%, transparent 5%, transparent 100%), radial-gradient(circle at 93% 12%, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.02) 5%, transparent 5%, transparent 100%), radial-gradient(circle at 93% 94%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 5%, transparent 5%, transparent 100%), radial-gradient(circle at 90% 17%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 5%, transparent 5%, transparent 100%), linear-gradient(90deg, rgb(138, 11, 69), rgb(218, 103, 37));
+  font-family: "Macondo Swash Caps", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
 
+.hard-rock {
+  font-family: "New Rocker", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  background-image: linear-gradient(124deg, rgba(232, 252, 33, 0.46) 0%, rgba(232, 252, 33, 0.46) 14.286%, rgba(196, 218, 49, 0.46) 14.286%, rgba(196, 218, 49, 0.46) 28.572%, rgba(161, 185, 64, 0.46) 28.572%, rgba(161, 185, 64, 0.46) 42.858%, rgba(125, 151, 80, 0.46) 42.858%, rgba(125, 151, 80, 0.46) 57.144%, rgba(89, 117, 96, 0.46) 57.144%, rgba(89, 117, 96, 0.46) 71.43%, rgba(54, 84, 111, 0.46) 71.43%, rgba(54, 84, 111, 0.46) 85.716%, rgba(18, 50, 127, 0.46) 85.716%, rgba(18, 50, 127, 0.46) 100.002%), linear-gradient(316deg, rgb(248, 151, 43) 0%, rgb(248, 151, 43) 14.286%, rgb(246, 132, 46) 14.286%, rgb(246, 132, 46) 28.572%, rgb(243, 113, 49) 28.572%, rgb(243, 113, 49) 42.858%, rgb(241, 94, 52) 42.858%, rgb(241, 94, 52) 57.144%, rgb(239, 75, 55) 57.144%, rgb(239, 75, 55) 71.43%, rgb(236, 56, 58) 71.43%, rgb(236, 56, 58) 85.716%, rgb(234, 37, 61) 85.716%, rgb(234, 37, 61) 100.002%);
+}
 
+.emo {
+  font-family: "Passion One", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  background-image: repeating-linear-gradient(220deg, rgb(0, 0, 0) 0px, rgb(0, 0, 0) 19px, transparent 19px, transparent 22px), repeating-linear-gradient(189deg, rgb(0, 0, 0) 0px, rgb(0, 0, 0) 19px, transparent 19px, transparent 22px), repeating-linear-gradient(148deg, rgb(0, 0, 0) 0px, rgb(0, 0, 0) 19px, transparent 19px, transparent 22px), linear-gradient(90deg, rgb(30, 169, 65), rgb(158, 25, 173));
+}
 
-  
+.new-wave {
+  background-image: repeating-radial-gradient(circle at center center, rgb(241, 43, 239), rgb(239, 246, 244) 5px);
+  font-family: "Limelight", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: black
+}
+
+.soul {
+  font-family: "Train One", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  color: black;
+  background-image: linear-gradient(0, rgba(115, 145, 116, 0.5) 0%, rgba(115, 145, 116, 0.5) 7%, rgba(135, 156, 101, 0.5) 7%, rgba(135, 156, 101, 0.5) 22%, rgba(154, 166, 86, 0.5) 22%, rgba(154, 166, 86, 0.5) 30%, rgba(174, 177, 71, 0.5) 30%, rgba(174, 177, 71, 0.5) 53%, rgba(194, 188, 55, 0.5) 53%, rgba(194, 188, 55, 0.5) 88%, rgba(214, 199, 40, 0.5) 88%, rgba(214, 199, 40, 0.5) 89%, rgba(233, 209, 25, 0.5) 89%, rgba(233, 209, 25, 0.5) 97%, rgba(253, 220, 10, 0.5) 97%, rgba(253, 220, 10, 0.5) 100%), linear-gradient(90deg, rgb(254, 151, 143) 0%, rgb(254, 151, 143) 30%, rgb(247, 131, 131) 30%, rgb(247, 131, 131) 31%, rgb(239, 110, 119) 31%, rgb(239, 110, 119) 47%, rgb(232, 90, 107) 47%, rgb(232, 90, 107) 49%, rgb(225, 70, 96) 49%, rgb(225, 70, 96) 80%, rgb(218, 50, 84) 80%, rgb(218, 50, 84) 86%, rgb(210, 29, 72) 86%, rgb(210, 29, 72) 87%, rgb(203, 9, 60) 87%, rgb(203, 9, 60) 100%);
+}
+
+.funk {
+  background-image: linear-gradient(90deg, rgb(214, 83, 21), rgb(241, 159, 1), rgb(228, 121, 11));
+  font-family: "Modak", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  color: black;
+}
+
+.grunge {
+  font-family: "Cabin Sketch", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  background-image: repeating-linear-gradient(90deg, rgba(100, 37, 30, 0.587) 0px, rgba(224, 82, 67, 0.5) 40px, transparent 40px, transparent 80px), repeating-linear-gradient(0deg, rgba(100, 37, 30, 0.587) 0px, rgba(224, 82, 67, 0.5) 40px, transparent 40px, transparent 80px), linear-gradient(90deg, hsl(250, 82%, 1%), hsl(250, 82%, 1%));
+}
+
+.post-punk {
+  background-image: repeating-linear-gradient(45deg, rgba(97, 97, 97, 0.1) 0px, rgba(97, 97, 97, 0.1) 2px, transparent 2px, transparent 4px), linear-gradient(90deg, rgb(43, 43, 43), rgb(43, 43, 43));
+  font-family: "Jura", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.folk {
+  font-family: "Charm", cursive;
+  font-weight: 700;
+  font-style: normal;
+  background-color: #DAA520;
+  color: rgb(129, 35, 35);
+}
+
+.country {
+  background-image: linear-gradient(0deg, rgba(80, 24, 135, 0.15) 0%, rgba(39, 228, 25, 0.15) 100%), linear-gradient(90deg, rgb(210, 135, 64), rgb(165, 130, 111));
+  font-family: "Arbutus", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.metal {
+  font-family: "Metal Mania", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  background-image: linear-gradient(45deg, rgb(37, 6, 46) 0%, rgb(37, 6, 46) 28%, rgb(66, 27, 59) 28%, rgb(66, 27, 59) 31%, rgb(96, 48, 72) 31%, rgb(96, 48, 72) 59%, rgb(125, 69, 85) 59%, rgb(125, 69, 85) 66%, rgb(154, 90, 97) 66%, rgb(154, 90, 97) 68%, rgb(184, 111, 110) 68%, rgb(184, 111, 110) 94%, rgb(213, 132, 123) 94%, rgb(213, 132, 123) 100%), linear-gradient(112.5deg, rgb(37, 6, 46) 0%, rgb(37, 6, 46) 28%, rgb(66, 27, 59) 28%, rgb(66, 27, 59) 31%, rgb(96, 48, 72) 31%, rgb(96, 48, 72) 59%, rgb(125, 69, 85) 59%, rgb(125, 69, 85) 66%, rgb(154, 90, 97) 66%, rgb(154, 90, 97) 68%, rgb(184, 111, 110) 68%, rgb(184, 111, 110) 94%, rgb(213, 132, 123) 94%, rgb(213, 132, 123) 100%), linear-gradient(90deg, rgb(37, 6, 46) 0%, rgb(37, 6, 46) 28%, rgb(66, 27, 59) 28%, rgb(66, 27, 59) 31%, rgb(96, 48, 72) 31%, rgb(96, 48, 72) 59%, rgb(125, 69, 85) 59%, rgb(125, 69, 85) 66%, rgb(154, 90, 97) 66%, rgb(154, 90, 97) 68%, rgb(184, 111, 110) 68%, rgb(184, 111, 110) 94%, rgb(213, 132, 123) 94%, rgb(213, 132, 123) 100%), linear-gradient(135deg, rgb(37, 6, 46) 0%, rgb(37, 6, 46) 28%, rgb(66, 27, 59) 28%, rgb(66, 27, 59) 31%, rgb(96, 48, 72) 31%, rgb(96, 48, 72) 59%, rgb(125, 69, 85) 59%, rgb(125, 69, 85) 66%, rgb(154, 90, 97) 66%, rgb(154, 90, 97) 68%, rgb(184, 111, 110) 68%, rgb(184, 111, 110) 94%, rgb(213, 132, 123) 94%, rgb(213, 132, 123) 100%), linear-gradient(90deg, rgb(100, 205, 26), rgb(46, 36, 113));
+  background-blend-mode: overlay, overlay, overlay, overlay, normal;
+}
+
+.shoegaze {
+  font-family: "Permanent Marker", cursive;
+  font-weight: 400;
+  font-style: normal;
+  background-image: radial-gradient(circle at center center, transparent, rgb(0, 0, 0)), linear-gradient(322deg, rgba(191, 191, 191, 0.05) 0%, rgba(191, 191, 191, 0.05) 50%, rgba(100, 100, 100, 0.05) 50%, rgba(100, 100, 100, 0.05) 100%), linear-gradient(48deg, rgba(43, 43, 43, 0.05) 0%, rgba(43, 43, 43, 0.05) 50%, rgba(197, 197, 197, 0.05) 50%, rgba(197, 197, 197, 0.05) 100%), linear-gradient(179deg, rgba(60, 60, 60, 0.05) 0%, rgba(60, 60, 60, 0.05) 50%, rgba(30, 30, 30, 0.05) 50%, rgba(30, 30, 30, 0.05) 100%), linear-gradient(294deg, rgba(120, 120, 120, 0.05) 0%, rgba(120, 120, 120, 0.05) 50%, rgba(96, 96, 96, 0.05) 50%, rgba(96, 96, 96, 0.05) 100%), linear-gradient(110deg, rgba(145, 145, 145, 0.05) 0%, rgba(145, 145, 145, 0.05) 50%, rgba(239, 239, 239, 0.05) 50%, rgba(239, 239, 239, 0.05) 100%), linear-gradient(96deg, rgba(207, 207, 207, 0.05) 0%, rgba(207, 207, 207, 0.05) 50%, rgba(60, 60, 60, 0.05) 50%, rgba(60, 60, 60, 0.05) 100%), linear-gradient(248deg, rgba(53, 53, 53, 0.05) 0%, rgba(53, 53, 53, 0.05) 50%, rgba(233, 233, 233, 0.05) 50%, rgba(233, 233, 233, 0.05) 100%), linear-gradient(29deg, rgba(117, 117, 117, 0.05) 0%, rgba(117, 117, 117, 0.05) 50%, rgba(231, 231, 231, 0.05) 50%, rgba(231, 231, 231, 0.05) 100%), linear-gradient(143deg, rgba(170, 170, 170, 0.05) 0%, rgba(170, 170, 170, 0.05) 50%, rgba(115, 115, 115, 0.05) 50%, rgba(115, 115, 115, 0.05) 100%), radial-gradient(circle at center center, hsl(273, 80%, 64%), hsl(273, 80%, 64%));
+}
+
 .reggae {
   color: black;
   font-family: "Bungee Inline", sans-serif;
   font-weight: 400;
   font-style: normal;
-  background: linear-gradient(
-    to left,
-    red 20%,
-    yellow 50%,
-    green 80%
-  );
-  background: linear-gradient(
-    to left,
-    red 20%,
-    yellow 50%,
-    green 80%
-  );
+  background: linear-gradient(to left,
+      red 20%,
+      yellow 50%,
+      green 80%);
+  background: linear-gradient(to left,
+      red 20%,
+      yellow 50%,
+      green 80%);
 }
 
 .initial-load {
@@ -210,21 +267,20 @@ div {
   margin-right: 270px;
   margin-left: 270px;
   margin-top: 100px;
-
 }
-
 
 .artist-list {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
+  padding-left: 78px;
+  padding-right: 78px;
 }
 
 .artist-item {
   width: 200px;
   text-align: center;
-  
 }
 
 .artist-image {
@@ -233,8 +289,6 @@ div {
   border-radius: 10px;
   justify-content: center;
   align-items: center;
-  
- 
 }
 
 .artists {
@@ -245,12 +299,10 @@ div {
   width: 100%;
   max-height: 50px;
   line-height: 50px;
-  
 }
 
 .sidebar {
-  
-  position:fixed;
+  position: fixed;
   margin-top: 0;
   margin-bottom: 200;
   width: 400px;
@@ -260,17 +312,12 @@ div {
   padding: 32px;
   z-index: 200;
   transition: transform 0.3s ease-in-out;
-  /* transition: right 0.3s ease; */
   border-radius: 12px;
   overflow-y: auto;
   transform: translateX(0);
-  
-
 }
 
-
 .sidebar button.close-btn {
-  background-color: #535bf2;
   color: white;
   border: none;
   padding: 10px;
@@ -279,7 +326,6 @@ div {
   position: absolute;
   top: 20px;
   right: 20px;
-  
 }
 
 .sidebar img.artist-image {
@@ -299,8 +345,8 @@ div {
   margin: -10px;
 }
 
-.favorite-btn.favorited {
-  background-color: #4CAF50; 
+.favorite-btn:hover {
+  background-color: #ff5b5b;
 }
 
 .favorite-btn:disabled {
@@ -317,7 +363,6 @@ div {
   margin: 20px 0;
   display: flex;
   justify-content: center;
-  
 }
 
 .search-form input {
@@ -326,13 +371,12 @@ div {
   width: 200px;
   border-radius: 5px;
   border: 1px solid #ccc;
- color: white;
-  
+  color: white;
 }
 
 .favorites-loading {
-  padding-right: 235px;
-  padding-left: 235px;
+  padding-right: 255px;
+  padding-left: 255px;
   margin-right: 230px;
   margin-left: 230px;
   margin-top: 100px;
@@ -341,10 +385,9 @@ div {
 .favorites {
   padding: 173px;
   max-width: 1280px;
-   z-index: 50;
-   margin-top: -140px;
-    
-   }
+  z-index: 50;
+  margin-top: -140px;
+}
 
 .favorite-list {
   display: flex;
@@ -352,7 +395,6 @@ div {
   gap: 20px;
   justify-content: center;
   margin: -10px;
-   
 }
 
 .favorite-item {
@@ -363,11 +405,9 @@ div {
   background-color: black;
   color: white;
   padding: 32px;
-  /* z-index: 200; */
   align-items: center;
   margin: 20px;
   width: 250px;
-  
 }
 
 .favorite-item img.artist-image {
@@ -378,7 +418,7 @@ div {
 }
 
 .remove-favorite-button {
-  background-color: #ff4d4d; /* Red color for remove */
+  background-color: #ff4d4d;
   color: white;
   border: none;
   padding: 8px 16px;
@@ -389,17 +429,14 @@ div {
 }
 
 .remove-favorite-button:hover {
-  background-color: #ff1717; /* Darker red on hover */
+  background-color: #ff1717;
 }
-
 
 .reviews-list {
   padding-right: 120px;
   width: 100%;
-  /* margin-left: -25px; */
   padding-top: 30px;
   padding-left: 100px;
-  
 }
 
 .reviews-container {
@@ -409,7 +446,6 @@ div {
   margin-top: -60px;
   margin-bottom: -50px;
   justify-content: center;
-  
 }
 
 .review-form {
@@ -417,29 +453,34 @@ div {
   padding-top: 10px;
   padding-left: 120px;
   padding-right: 100px;
-  
+}
+
+.span {
+  z-index: -50;
+}
+
+.review-photo {
+  max-height: 200px;
 }
 
 .contact {
   padding: 170px;
-  /* font-family: Arial, sans-serif; */
-   max-width: 1280px;
-   z-index: 50;
-   margin-top: -140px;
-   width: 100%;
-   display: flex;
-   border-radius: 12px;
-   margin-left: -18px;
-   margin-right: 20px;
-   padding-left: 210px;
-   padding-left: 210px;
+  max-width: 1280px;
+  z-index: 50;
+  margin-top: -140px;
+  width: 100%;
+  display: flex;
+  border-radius: 12px;
+  margin-left: -18px;
+  margin-right: 20px;
+  padding-left: 235px;
+  padding-left: 235px;
 }
 
 .field {
   margin-left: 70px;
   margin-right: 70px;
   margin-top: 5px;
-  
 }
 
 .words {
@@ -450,7 +491,7 @@ div {
 .nav {
   min-height: 80vh;
 }
- 
+
 nav a {
   text-decoration: none;
   padding: 10px;
@@ -458,9 +499,9 @@ nav a {
 
 nav a.active {
   font-weight: bold;
-  color: #de67ff 
+  color: #de67ff
 }
 
 .home {
-width: 100%;
+  width: 100%;
 }
