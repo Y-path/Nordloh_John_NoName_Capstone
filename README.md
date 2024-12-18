@@ -12,9 +12,11 @@ JavaScript, Node, Express, MongoDB, Mongoose, React, CSS, TailwindCSS, The Spoti
 
 ## Installation and Methods
 
-Files can be opened directly from my Github repository which is located here: https://github.com/Y-path/Nordloh_John_NoName_Capstone. Access the
+Files can be opened directly from my Github repository which is located here: https://github.com/Y-path/Nordloh_John_NoName_Capstone.
 
-database and the Spotify API by using my connection string and client ID/SECRET which will be attached to the submission of this project.
+Access the database and the Spotify API by using my connection string and client ID/SECRET which will be attached to the submission
+
+ of this project.
 
 BACKEND
 
