@@ -10,7 +10,7 @@ export const Reviews = function() {
     useEffect(() => {
       const fetchReviews = async () => {
         try {
-          const response = await fetch('https://nordloh-john-noname-capstone-backend.onrender.com/reviews'); 
+          const response = await fetch('http://localhost:5000/reviews'); 
           const data = await response.json();
           setReviews(data); 
         } catch (error) {

@@ -8,13 +8,13 @@ const favoriteRoutes = require("./routes/favoriteRoutes");
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-const corsOptions = {
-  origin: 'https://nordloh-john-noname-capstone-frontend.onrender.com', 
-  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-  credentials: true, 
-};
+// const corsOptions = {
+//   origin: 'https://nordloh-john-noname-capstone-frontend.onrender.com', 
+//   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+//   credentials: true, 
+// };
 
-app.use(cors(corsOptions));
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use("/uploads", express.static("uploads"));

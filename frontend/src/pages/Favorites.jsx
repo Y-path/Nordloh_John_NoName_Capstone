@@ -10,8 +10,8 @@ const Favorites = ({ setFavoritesLoading }) => {
         const fetchFavorites = async () => {
             try {
 
-                // const response = await fetch('http://localhost:5000/favorites');
-                const response = await fetch('https://nordloh-john-noname-capstone-backend.onrender.com/favorites');
+                const response = await fetch('http://localhost:5000/favorites');
+                // const response = await fetch('https://nordloh-john-noname-capstone-backend.onrender.com/favorites');
                 const favoriteData = await response.json();
 
 
@@ -91,7 +91,7 @@ const Favorites = ({ setFavoritesLoading }) => {
     const handleRemoveFavorite = async (artistId) => {
         try {
 
-            const response = await fetch(`https://nordloh-john-noname-capstone-backend.onrender.com/favorites/${artistId}`, {
+            const response = await fetch(`http://localhost:5000/favorites/${artistId}`, {
                 method: 'DELETE',
             });
 

@@ -14,7 +14,7 @@ const Sidebar = React.forwardRef(({ artist, closeSidebar }) => {
     setLoading(true);
     try {
 
-      const response = await fetch("https://nordloh-john-noname-capstone-backend.onrender.com/favorites", {
+      const response = await fetch("http://localhost:5000/favorites", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
