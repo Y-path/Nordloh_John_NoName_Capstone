@@ -3,10 +3,18 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 require("dotenv").config();
 const reviewRoutes = require("./routes/reviewRoutes");
+const artistRoutes = require("./routes/artistRoutes")
+const favoriteRoutes = require("./routes/favoriteRoutes");
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-app.use(cors());
+const corsOptions = {
+  origin: 'https://nordloh-john-noname-capstone-frontend.onrender.com', 
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true, 
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use("/uploads", express.static("uploads"));
@@ -23,8 +31,6 @@ app.get("/", (req, res) => {
   res.send("This project has no name");
 });
 
-const artistRoutes = require("./routes/artistRoutes")
-const favoriteRoutes = require("./routes/favoriteRoutes");
 
 app.use("/artists", artistRoutes);
 app.use("/reviews", reviewRoutes);
